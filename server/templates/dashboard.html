@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRT Dashboard</title>
+</head>
+<style>
+    body{
+        margin:0;
+        padding:0;
+        height: 100vh;
+        width:100vw;
+        color:rgb(230, 230, 230);
+        font-family: 'Courier New', Courier, monospace;
+    }
+    .dial-outer{
+        position: absolute;;
+        width:40vw;
+        height:40vh;
+        top:30vh;
+        left:30vw;
+        
+    }
+    .pointer{
+        position: relative;
+        width:20%;
+        height:20%;
+        top:-60%;
+        left:30%;
+        transform-origin: right;
+        transform: rotate(-15deg);
+    }
+    .speed{
+        position:absolute;
+        height:5vh;
+        width:5vw;
+        top:60vh;
+        left:48vw;
+        
+    }
+    .brake{
+        position:absolute;
+        height:5vh;
+        width:5vw;
+        text-align:center;
+        display:flux;
+        align-items: center;
+        border-radius: 20px;
+        background-color: rgb(43, 0, 0);
+        top:75vh;
+        padding-top: 10px;
+        left:48vw;
+    }
+    #distance{
+        position:absolute;
+        width:200px;
+        height:50px;
+        text-align:center;
+        display:flux;
+        align-items: center;
+        border-radius: 20px;
+        background-color: rgb(43, 43, 43);
+        top:85vh;
+        padding-top: 10px;
+        left:44vw;
+    }
+    .wfl,.wfr,.wbl,.wbr{
+        position:absolute;
+        padding:20px;
+        background-color: rgb(56, 56, 56);
+    }
+    .wfl{
+        top:0;
+        left:0;
+        border-radius: 0 0 40% 0; 
+    }
+    .wfr{
+        top:0;
+        right:0;
+        border-radius: 0 0 0 40%;
+    }
+    .wbl{
+        bottom:0;
+        left:0;
+        border-radius: 0 40% 0 0;
+    }
+    .wbr{
+        bottom:0;
+        right:0;
+        border-radius: 40% 0 0 0;
+    }
+    table{
+        border-spacing: 2vh;
+    }
+</style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>var socket = io();</script>
+<body style="background:url({{url_for('static',filename='dash.svg')}});background-size:cover;">
+    <div class="dial-outer">
+        <img height="100%" width="100%" src="{{url_for('static',filename='dial-outer.svg')}}" alt="dial-outer">
+        <img id="pointer" src="{{url_for('static',filename='pointer.svg')}}" alt="pointer" class="pointer">
+    </div>
+    <div class="speed">
+        <div id="f">F : 100</div>
+        <div id="b">B : 100</div>
+    </div>
+    <div class="brake">
+        BRAKE
+    </div>
+    <div id="distance">
+        Distance : 0
+    </div>
+    <div class="wfl">
+        <table>
+            <tr>
+                <th>ACC</th>
+                <th>GYRO</th>
+            </tr>
+            <tr>
+                <td id='xa'>X : 0</td>
+                <td id='xg'>X : 0</td>
+            </tr>
+            <tr>
+                <td id='ya'>Y : 0</td>
+                <td id='yg'>Y : 0</td>
+                
+            </tr>
+            <tr>
+                <td id='za'>Z : 0</td>
+                <td id='zg'>Z : 0</td>
+            </tr>
+        </table>
+    </div>
+    <div class="wfr">
+        <table>
+            <tr>
+                <th>ACC</th>
+                <th>GYRO</th>
+            </tr>
+            <tr>
+                <td id='xa'>X : 0</td>
+                <td id='xg'>X : 0</td>
+            </tr>
+            <tr>
+                <td id='ya'>Y : 0</td>
+                <td id='yg'>Y : 0</td>
+                
+            </tr>
+            <tr>
+                <td id='za'>Z : 0</td>
+                <td id='zg'>Z : 0</td>
+            </tr>
+        </table>
+    </div>
+    <div class="wbl">
+        <table>
+            <tr>
+                <th>ACC</th>
+                <th>GYRO</th>
+            </tr>
+            <tr>
+                <td id='xa'>X : 0</td>
+                <td id='xg'>X : 0</td>
+            </tr>
+            <tr>
+                <td id='ya'>Y : 0</td>
+                <td id='yg'>Y : 0</td>
+                
+            </tr>
+            <tr>
+                <td id='za'>Z : 0</td>
+                <td id='zg'>Z : 0</td>
+            </tr>
+        </table>
+    </div>
+    <div class="wbr">
+        <table>
+            <tr>
+                <th>ACC</th>
+                <th>GYRO</th>
+            </tr>
+            <tr>
+                <td id='xa'>X : 0</td>
+                <td id='xg'>X : 0</td>
+            </tr>
+            <tr>
+                <td id='ya'>Y : 0</td>
+                <td id='yg'>Y : 0</td>
+                
+            </tr>
+            <tr>
+                <td id='za'>Z : 0</td>
+                <td id='zg'>Z : 0</td>
+            </tr>
+        </table>
+    </div>
+</body>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script> -->
+<script>
+    var pointer = document.getElementsByClassName('pointer')[0];
+    rot = (i)=>{
+        pointer.style.transform = `rotate(${i}deg)`;
+    }
+    var f = document.getElementById('f');
+    var b = document.getElementById('b');
+    var xa = document.getElementById('xa');
+    var xg = document.getElementById('xg');
+    var ya = document.getElementById('ya');
+    var yg = document.getElementById('yg');
+    var za = document.getElementById('za');
+    var zg = document.getElementById('zg');
+
+    var socket = io.connect('http://localhost:8000');
+    socket.on('connect',()=>{
+        alert("Connected");
+        socket.emit('msg',"Client Connected");
+        });
+    socket.on('msg',(msg)=>alert(msg));
+
+</script>
+</html>

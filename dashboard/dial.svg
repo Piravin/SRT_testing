@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="571" height="571" viewBox="0 0 571 571">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #0f0f0f;
+      }
+
+      .cls-2 {
+        fill: #6e0000;
+      }
+
+      .cls-3, .cls-4 {
+        fill: none;
+      }
+
+      .cls-3 {
+        stroke: #fdfdfd;
+      }
+
+      .cls-4 {
+        stroke: #707070;
+      }
+    </style>
+  </defs>
+  <g id="dial" transform="translate(-685 -1137)">
+    <circle id="Ellipse_1" data-name="Ellipse 1" class="cls-1" cx="285.5" cy="285.5" r="285.5" transform="translate(685 1137)"/>
+    <ellipse id="Ellipse_2" data-name="Ellipse 2" class="cls-2" cx="19.5" cy="18.5" rx="19.5" ry="18.5" transform="translate(952 1404)"/>
+    <ellipse id="Ellipse_3" data-name="Ellipse 3" cx="15.5" cy="14.5" rx="15.5" ry="14.5" transform="translate(956 1408)"/>
+    <rect id="Rectangle_1" data-name="Rectangle 1" width="194" height="137" rx="33" transform="translate(875 1498)"/>
+    <path id="Path_3" data-name="Path 3" class="cls-3" d="M722.777,664C665.951,408.244,808.513,297.585,959.05,295.591S1270.093,414.226,1202.3,664" transform="translate(11 872)"/>
+    <path id="Path_4" data-name="Path 4" class="cls-4" d="M960.5,569s-204.746,7.515-204.746-6.552,4.991-15.428,204.746-29.5" transform="translate(11 872)"/>
+    <path id="Path_5" data-name="Path 5" class="cls-4" d="M929.149,563.48s-173.395,6.364-173.395-5.549,4.227-13.066,173.395-24.979" transform="translate(30 875)"/>
+  </g>
+</svg>

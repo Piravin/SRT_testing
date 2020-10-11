@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="224.746" height="39.505" viewBox="0 0 224.746 39.505">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #6e0000;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #707070;
+      }
+    </style>
+  </defs>
+  <g id="pointer" transform="translate(-839.254 -1808)">
+    <ellipse id="Ellipse_2" data-name="Ellipse 2" class="cls-1" cx="19.5" cy="18.5" rx="19.5" ry="18.5" transform="translate(1025 1808)"/>
+    <ellipse id="Ellipse_3" data-name="Ellipse 3" cx="15.5" cy="14.5" rx="15.5" ry="14.5" transform="translate(1029 1812)"/>
+    <path id="Path_4" data-name="Path 4" class="cls-2" d="M960.5,569s-204.746,7.515-204.746-6.552,4.991-15.428,204.746-29.5" transform="translate(84 1276)"/>
+    <path id="Path_5" data-name="Path 5" class="cls-2" d="M929.149,563.48s-173.395,6.364-173.395-5.549,4.227-13.066,173.395-24.979" transform="translate(103 1279)"/>
+  </g>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clip-dash);
+      }
+
+      .cls-2 {
+        fill: #303030;
+      }
+    </style>
+    <clipPath id="clip-dash">
+      <rect width="1920" height="1080"/>
+    </clipPath>
+  </defs>
+  <g id="dash" class="cls-1">
+    <rect width="1920" height="1080"/>
+    <path id="Path_2" data-name="Path 2" class="cls-2" d="M0,644.024S112.883,685.3,257.778,537.037,623.643,134.168,958.922,134.168s535.514,231.017,715.79,402.869,245.144,106.987,245.144,106.987l.277,434.023L0,1076.94Z" transform="translate(0 2)"/>
+    <path id="Path_1" data-name="Path 1" d="M0,629.494s112.883,39.9,257.778-103.42,367.291-317.83,702.57-317.83,534.088,151.708,714.364,317.83,245.144,103.42,245.144,103.42l.277,419.553L0,1047.977Z" transform="translate(0 31)"/>
+  </g>
+</svg>

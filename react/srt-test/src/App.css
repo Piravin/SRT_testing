@@ -1,0 +1,11 @@
+.App {
+  text-align: center;
+  min-height: 100vh;
+  background-color: black;
+  color:white;
+}
+
+.white{
+  color:white!important;
+}
+

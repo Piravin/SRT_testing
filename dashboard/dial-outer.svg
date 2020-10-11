@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="571" height="571" viewBox="0 0 571 571">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #0f0f0f;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #fdfdfd;
+      }
+    </style>
+  </defs>
+  <g id="dial-outer" transform="translate(-685 -1137)">
+    <circle id="Ellipse_1" data-name="Ellipse 1" class="cls-1" cx="285.5" cy="285.5" r="285.5" transform="translate(685 1137)"/>
+    <path id="Path_3" data-name="Path 3" class="cls-2" d="M722.777,664C665.951,408.244,808.513,297.585,959.05,295.591S1270.093,414.226,1202.3,664" transform="translate(11 872)"/>
+  </g>
+</svg>

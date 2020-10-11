@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+</head>
+<body>
+    IN
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
+<script>
+    var socket = io("http://localhost:5000/web");
+    socket.on('connect',()=>{
+        alert("connection");
+    });
+    socket.on('msg',(msg)=>{
+        console.log("something");
+        console.log(msg);
+        alert(`message : ${msg}`);
+    });
+    socket.on('disconnect',()=>{
+        console.log("Disconnected");
+    });
+    
+</script>
+</html>
