@@ -17,8 +17,8 @@ function LoginForm(props){
         <div className="container">
         <form action="#" method="POST" className="formgroup">
             <Grid className={classes.root} container direction="column" justify="center" alignItems="space-between" spacing={2}>
-                <TextField className={classes.root} id="email" label="Email id" variant="outlined"/>
-                <TextField className={classes.root} id="password" label="Password" variant="outlined" type="password"/>
+                <TextField className={classes.root} id="email" label="Email id" variant="filled"/>
+                <TextField className={classes.root} id="password" label="Password" variant="filled" type="password"/>
             </Grid>
         </form>
         </div>

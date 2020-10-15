@@ -61,7 +61,7 @@ export const updater = (data) => (dispatch) => {
         received.acc.frontRight,
         received.acc.backLeft,
         received.acc.backLeft));
-    dispatch(upAcc(received.gyro.frontLeft,
+    dispatch(upGyro(received.gyro.frontLeft,
         received.gyro.frontRight,
         received.gyro.backLeft,
         received.gyro.backLeft));

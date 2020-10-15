@@ -19,6 +19,9 @@ socketio = SocketIO(app)
 def home():
     return render_template('index.html')
 
+@socketio.on('connect')
+def con():
+    print("unknown connected")
 @socketio.on('connect',namespace='/rasp')
 def rasp_connect():
     join_room('rasp')

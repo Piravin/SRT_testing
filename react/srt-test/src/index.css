@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.dial-outer{
+  color:white
+}
+.dial{
+  position: absolute;
+  width: 40vw;
+  height: 40vh;
+}
+.pointer{
+  width:10vw;
+  height:10vh
+}
