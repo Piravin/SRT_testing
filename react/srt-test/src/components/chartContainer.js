@@ -2,43 +2,69 @@ import React, {useState} from 'react';
 import {Line} from 'react-chartjs-2';
 
 export default function Chart(props){
-    const [labels,setLabel] = useState(props.lables);
-    const [data, setData] = useState(props.data);
+    const data = props.data;
     const config = {
-        labels: labels,
+        labels: data.labels,
         datasets:[
             {
-                label:data.lable,
+                label:data.title,
                 fill:false,
-                lineTension:0.1,
+                lineTension: 0.1,
+                backgroundColor: '#B41F3D',
+                borderColor:'#B41F3D',
                 data:data.data
             }
         ]
     }
     return(
-        <Line data={config}
-            options={{
-                title:{
-                    display:true,
-                    text:data.title,
-                    fontSize:10
-                },
-                legend:{
-                    display:true,
-                    position:'top'
-                },
-                layout:{
-                    padding:{
-                        left:10,
-                        right:20,
-                        top:20,
-                        bottom:10
-                    }
-                },
-                gridLines:{
-                    display:false
-                }
-            }}
+        <div className="chart">
+            <Line data={config}
+                options={{
+                    maintainAspectRatio:0,
+                    legend:{
+                        display:true,
+                        position:'top',
+                        labels:{
+                            fontColor: 'white'
+                        }
+                    },
+                    layout:{
+                        padding:{
+                            left:10,
+                            right:20,
+                            top:20,
+                        }
+                    },
+                    gridLines:{
+                        display:false
+                    },
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero:true,
+                                fontColor: '#A3A3A3',
+                                padding: 10
+                            },
+                            gridLines: {
+                                display: true,
+                                color: '#393535',
+                                drawTicks:false
+                              }
+                        }],
+                      xAxes: [{
+                            ticks: {
+                                fontColor: '#A3A3A3',
+                                padding: 10
+                            },
+                            gridLines: {
+                                display: true,
+                                color: '#393535',
+                                drawTicks:false
+                              }
+                        }]
+                    } 
+                }}
             />
+        </div>
     )
 }

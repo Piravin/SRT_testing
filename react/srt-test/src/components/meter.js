@@ -13,8 +13,12 @@ function Meter(props){
     }
     return(
         <React.Fragment>
-            <Arc className="dial"></Arc>
+            <Arc className="dial"/>
             <Pointer style={styleSheet.pointer} className="pointer"/>
+            <div className="display">
+                <p>Front : {props.rpm}</p>
+                <p>Back  : {props.rpm}</p>
+            </div>
         </React.Fragment>
     );
 }

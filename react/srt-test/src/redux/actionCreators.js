@@ -56,6 +56,7 @@ export const updater = (data) => (dispatch) => {
     const received = JSON.parse(data);
     dispatch(upFront(received.front.rpm,received.front.speed));
     dispatch(upBack(received.back.rpm,received.back.speed));
+    dispatch(upCvt(received.cvt.p,received.cvt.s));
     dispatch(upBreak(received.break.isBreaking,received.break.distance));
     dispatch(upAcc(received.acc.frontLeft,
         received.acc.frontRight,

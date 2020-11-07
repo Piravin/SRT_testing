@@ -1,7 +1,7 @@
 import * as ActionTypes from './actionTypes';
 
 export const Front = (state = {
-    rpm:[],
+    rpm:['2000','2300','2400','2400','2600','2650'],
     speed: [],
     isLoading:false
 },action)=>{

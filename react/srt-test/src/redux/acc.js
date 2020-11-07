@@ -2,24 +2,24 @@ import * as ActionTypes from './actionTypes';
 
 export const Acc = (state={
     frontLeft : {
-        x : [],
-        y : [],
-        z : []
+        x : [23,234],
+        y : [23,234],
+        z : [23,234]
     },
-    fromtRight : {
-        x : [],
-        y : [],
-        z : []
+    frontRight : {
+        x : [23,234],
+        y : [23,234],
+        z : [23,234]
     },
     backLeft : {
-        x : [],
-        y : [],
-        z : []
+        x : [23,234],
+        y : [23,234],
+        z : [23,234]
     },
     backRight : {
-        x : [],
-        y : [],
-        z : []
+        x : [23,234],
+        y : [23,234],
+        z : [23,234]
     }
 },action) =>{
     switch (action.type){
@@ -30,9 +30,9 @@ export const Acc = (state={
                 z:state.frontLeft.z.concat(action.payload.frontLeft.z)
             };
             const fromtRight = {
-                x:state.fromtRight.x.concat(action.payload.fromtRight.x),
-                y:state.fromtRight.y.concat(action.payload.fromtRight.y),
-                z:state.fromtRight.z.concat(action.payload.fromtRight.z)
+                x:state.frontRight.x.concat(action.payload.frontRight.x),
+                y:state.frontRight.y.concat(action.payload.frontRight.y),
+                z:state.frontRight.z.concat(action.payload.frontRight.z)
             };
             const backLeft = {
                 x:state.backLeft.x.concat(action.payload.backLeft.x),
